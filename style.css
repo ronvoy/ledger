@@ -1,0 +1,46 @@
+.button {
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 24px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: dodgerblue;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.button:hover {background-color: dodgerblue}
+
+.button:active {
+  background-color: rgb(139, 183, 226);
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+
+#ledger {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#ledger td, #ledger th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#ledger tr:nth-child(even){background-color: #f2f2f2;}
+
+#ledger tr:hover {background-color: #ddd;}
+
+#ledger th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: dodgerblue;
+  color: white;
+}

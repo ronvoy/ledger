@@ -22,7 +22,7 @@ class query extends database{
         if($result->num_rows>0){
             $arr=array();
           while($row=$result->fetch_assoc()){
-            $arr[]=$row;
+              $arr[]=$row;
              
              
           }
@@ -49,6 +49,9 @@ class query extends database{
 
        
       }
-}
+      
+
+      }
+
 
 ?>

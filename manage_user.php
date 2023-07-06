@@ -1,20 +1,28 @@
 <?php
 include("index1.php");
-$obj=new query();
-if(isset($_POST['submit'])){
-    $description=$obj->$_POST['description'];
-    $expense=$obj->$_POST['expense'];
-    $income=$obj->$_POST['income'];
-    $category=$obj->$_POST['category'];
+$obj = new query();
 
-    $condition_arr=array('description'=>$description,'expense'=>$expense,'income'=>$income ,'category'=>$category);
+if(isset($_POST["submit"])){
+    $description = $_POST['description'];
+    $expense = $_POST['expense'];
+    $income = $_POST['income'];
+    $category = $_POST['category'];
 
-    $obj->insertData('tb',$condition_arr);
+    $condition_arr = array(
+        'description' => $description,
+        'expense' => $expense,
+        'income' => $income,
+        'category' => $category
+    );
 
-  header('location:index.php');
- 
+    $obj->insertData('tb', $condition_arr);
+
+    // Check if the data was inserted successfully
+    if ($obj->lastInsertId() > 0) {
+        header('Location: index.php');
+        exit(); // Important: Terminate the script after the redirection
+    }
 }
-
 ?>
 <!doctype html>
 <html lang="en-US">
@@ -60,7 +68,7 @@ if(isset($_POST['submit'])){
                      </div>
                      
                      <div class="form-group">
-                        <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> Add </button>
+                        <button type="submit" name="submit" value="submit" id="submit" class="btn btn-primary"><i class="fa fa-fw fa-plus-circle"></i> submit </button>
                      </div>
                   </form>
                </div>

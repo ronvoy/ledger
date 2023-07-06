@@ -1,5 +1,6 @@
 <?php
 include('index1.php');
+
 $obj=new query();
 $result=$obj->getData('tb');
 ?>

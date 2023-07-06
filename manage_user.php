@@ -3,8 +3,8 @@ include("index1.php");
 $obj=new query();
 if(isset($_POST['submit'])){
     $description=$obj->$_POST['description'];
-    $income=$obj->$_POST['expense'];
-    $expense=$obj->$_POST['income'];
+    $expense=$obj->$_POST['expense'];
+    $income=$obj->$_POST['income'];
     $category=$obj->$_POST['category'];
 
     $condition_arr=array('description'=>$description,'expense'=>$expense,'income'=>$income ,'category'=>$category);
@@ -52,7 +52,7 @@ if(isset($_POST['submit'])){
                      </div>
                      <div class="form-group">
                         <label>income <span class="text-danger">*</span></label>
-                        <input type="int" class="tel form-control" name="income" id="income"  placeholder="income" required>
+                        <input type="int" name="income" name="income" id="income" class="form-control"  placeholder="income" required>
                      </div>
                      <div class="form-group">
                         <label>category<span class="text-danger">*</span></label>

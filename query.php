@@ -1,5 +1,7 @@
 <?php
+    include("connection.php");
   Class Query
+
   {
     public function getData(){
         $sql="select * from  tb ";

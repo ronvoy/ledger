@@ -1,6 +1,6 @@
 <?php
 
-Class Connection
+ Class Connection
 {
     private $server="localhost";
     private $username="root";
@@ -12,7 +12,7 @@ Class Connection
         $this->username;
         $this->password;
         $this->db;
-        $conn=new mysqli($this->server,$this->username,$this->passowrd,$this->db);
+        $conn=new mysqli($this->server,$this->username,$this->password,$this->db);
         return $conn;
     }
 }

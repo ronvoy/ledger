@@ -1,6 +1,8 @@
 <?php
    include("connection.php");
-   $obj = new query();
+   include("query.php");
+   
+   $obj = new Query();
 
    if(isset($_POST["submit"]))
    {
@@ -18,12 +20,11 @@
 
       $obj->insertData('tb', $condition_arr);
 
-      // Check if the data was inserted successfully
-      if ($obj->lastInsertId() > 0) {
+      
          header('Location: index.php');
-         exit(); // Important: Terminate the script after the redirection
+         
       }
-   }
+   
 ?>
 <!doctype html>
 <html lang="en-US">

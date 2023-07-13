@@ -1,7 +1,6 @@
 <?php
-    include("connection.php");
-  Class Query
-
+    
+  Class Query extends Connection
   {
     public function getData(){
         $sql="select * from  tb ";

@@ -1,10 +1,9 @@
 <?php
 include("connection.php");
-$obj=new query;
-$condition_arr=array('description'=>'laptop','expense'=>'300','income'=>'0' ,'category'=>'goods');
+include("query.php");
+$obj=new Query;
+$condition_arr=array('id'=>1);
 //$result=$obj->getData();
-$result=$obj->insertData('tb',$condition_arr);
-echo"<pre>";
-print_r($result);
+$result=$obj->deleteData('tb',$condition_arr);
 
 ?>

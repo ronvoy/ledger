@@ -30,5 +30,24 @@
         $result=$this->connect()->query($sql);
       }
     }
+    public function deleteData($table,$condition_arr){
+      if($condition_arr!=""){
+        $sql="delete from $table where ";
+        $c=count($condition_arr);
+        $i=1;
+        foreach($condition_arr as $key=>$val){
+          if($i==$c){
+            $sql.="$key='$val'";
+            
+          }
+          else{
+            $sql.="$key='$val' and ";
+          }
+          $i++;
+        }
+        $result=$this->connect()->query($sql);
+
+      }
+    }
   }
 ?>

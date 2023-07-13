@@ -13,6 +13,12 @@
                 include('connection.php');
                 include('query.php');
                 $obj=new Query();
+
+                if(isset($_GET['type']) &&$_GET['type']=='delete' ){
+                    $id=$_GET['id'];
+                    $condition_arr=array('id'=>$id);
+                    $result=$obj->deleteData('tb',$condition_arr);
+                }
                 $result=$obj->getData('tb');
 
                 date_default_timezone_set('Asia/Kathmandu');
@@ -49,7 +55,7 @@
                                 <td> ".$list['expense']." </td>
                                 <td> ".$list['income']." </td>
                                 <td> ".$list['category']." </td>
-                                <td> <a href='/delete.php?id=".$list['id']."'>delete</a> | <a href='/edit.php?id=".$list['id']."'>edit</a> </td>
+                                <td> <a href='?type=delete&id=".$list['id']."'>delete</a> | <a href='/edit.php?id=".$list['id']."'>edit</a> </td>
                             </tr>";
                         }  
                     } 

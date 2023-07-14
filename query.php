@@ -49,5 +49,25 @@
 
       }
     }
+    public function updateData($table,$condition_arr,$where_filed,$where_value){
+      if($condition_arr!=""){
+        $sql="update $table set ";
+        $c=count($condition_arr);
+        $i=1;
+        foreach($condition_arr as $key=>$val){
+          if($i==$c){
+            $sql.="$key='$val'";
+            
+          }
+          else{
+            $sql.="$key='$val', ";
+          }
+          $i++;
+        }
+        $sql.="where $where_filed='$where_value'";
+        $result=$this->connect()->query($sql);
+
+      }
+    }
   }
 ?>

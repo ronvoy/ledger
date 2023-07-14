@@ -12,6 +12,7 @@
             <?php
                 include('connection.php');
                 include('query.php');
+                
                 $obj=new Query();
 
                 if(isset($_GET['type']) &&$_GET['type']=='delete' ){
@@ -46,6 +47,7 @@
                 <?php
                     if(isset($result))
                     {
+                        
                         foreach($result as $list)
                         {
                             echo 
@@ -55,10 +57,12 @@
                                 <td> ".$list['expense']." </td>
                                 <td> ".$list['income']." </td>
                                 <td> ".$list['category']." </td>
-                                <td> <a href='?type=delete&id=".$list['id']."'>delete</a> | <a href='/edit.php?id=".$list['id']."'>edit</a> </td>
+                                <td> <a href='delete?type=delete&id=".$list['id']."'>delete</a> | <a href='manageUser.php?id=".$list['id']."'>edit</a> </td>
                             </tr>";
                         }  
+                        
                     } 
+                    
                     else 
                     {
                         echo

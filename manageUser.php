@@ -3,6 +3,13 @@
    include("query.php");
    
    $obj = new Query();
+   if(isset($_GET['id']) && $_GET['id']!=''){
+      $id= $_GET['id'];
+      $condition_arr=array('id'=>$id);
+      $result=$obj->getData('tb',$condition_arr);
+      $print_r($result);
+
+   }
 
    if(isset($_POST["submit"]))
    {

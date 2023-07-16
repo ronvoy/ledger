@@ -7,7 +7,7 @@
       $id= $_GET['id'];
       $condition_arr=array('id'=>$id);
       $result=$obj->getData('tb',$condition_arr);
-      $print_r($result);
+      $print($result);
 
    }
 

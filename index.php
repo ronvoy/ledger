@@ -57,7 +57,7 @@
                                 <td> ".$list['expense']." </td>
                                 <td> ".$list['income']." </td>
                                 <td> ".$list['category']." </td>
-                                <td> <a href='delete?type=delete&id=".$list['id']."'>delete</a> | <a href='manageUser.php?id=".$list['id']."'>edit</a> </td>
+                                <td> <a href='?type=delete&id=".$list['id']."'>delete</a> | <a href='manageUser.php?id=".$list['id']."'>edit</a> </td>
                             </tr>";
                         }  
                         

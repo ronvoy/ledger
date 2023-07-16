@@ -3,11 +3,21 @@
    include("query.php");
    
    $obj = new Query();
+
+   $description='';
+   $expense='';
+   $income='';
+   $category='';
+   $id='';
+
    if(isset($_GET['id']) && $_GET['id']!=''){
       $id= $_GET['id'];
       $condition_arr=array('id'=>$id);
       $result=$obj->getData('tb',$condition_arr);
-      $print($result);
+      $description=$result['0'] ['description'];
+      $expense=$result['0'] ['expense'];
+      $income=$result['0'] ['income'];
+      $category=$result['0'] ['category'];
 
    }
 
@@ -24,13 +34,21 @@
          'income' => $income,
          'category' => $category
       );
+      if($id==''){
+
 
       $obj->insertData('tb', $condition_arr);
+      }else{
+         $obj->updateData('tb', $condition_arr,'id',$id);
+      }
 
-      
-         header('Location: index.php');
+
+      header('Location: index.php');
+        
          
       }
+      
+         
    
 ?>
 <!doctype html>
@@ -61,19 +79,19 @@
                   <form method="post">
                      <div class="form-group">
                         <label>description<span class="text-danger">*</span></label>
-                        <input type="varchar" name="description" id="description" class="form-control" placeholder="Enter description" required>
+                        <input type="varchar" name="description" id="description" class="form-control" placeholder="Enter description" required value="<?php echo $description?>">
                      </div>
                      <div class="form-group">
                         <label>expense <span class="text-danger">*</span></label>
-                        <input type="int" name="expense" id="expense" class="form-control" placeholder="expense" required>
+                        <input type="int" name="expense" id="expense" class="form-control" placeholder="expense" required value="<?php echo $expense?>">
                      </div>
                      <div class="form-group">
                         <label>income <span class="text-danger">*</span></label>
-                        <input type="int" name="income" name="income" id="income" class="form-control"  placeholder="income" required>
+                        <input type="int" name="income" name="income" id="income" class="form-control"  placeholder="income" required value="<?php echo $income?>">
                      </div>
                      <div class="form-group">
                         <label>category<span class="text-danger">*</span></label>
-                        <input type="varchar" name="category" id="category" class="form-control" placeholder="category" required>
+                        <input type="varchar" name="category" id="category" class="form-control" placeholder="category" required value="<?php echo $category?>">
                      </div>
                      
                      <div class="form-group">

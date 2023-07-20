@@ -31,6 +31,7 @@
 #ledger td, #ledger th {
   border: 1px solid #ddd;
   padding: 8px;
+  text-align: center;
 }
 
 #ledger tr:nth-child(even){background-color: #f2f2f2;}
@@ -40,7 +41,7 @@
 #ledger th {
   padding-top: 12px;
   padding-bottom: 12px;
-  text-align: left;
+  text-align: center;
   background-color: dodgerblue;
   color: white;
 }
